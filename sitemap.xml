@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://floberry36.github.io/zoonigma-demo/</loc>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://floberry36.github.io/zoonigma-demo/fr/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://floberry36.github.io/zoonigma-demo/en/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://floberry36.github.io/zoonigma-demo/"/>
+	</url>
+	<url>
+		<loc>https://floberry36.github.io/zoonigma-demo/fr/</loc>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://floberry36.github.io/zoonigma-demo/fr/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://floberry36.github.io/zoonigma-demo/en/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://floberry36.github.io/zoonigma-demo/"/>
+	</url>
+	<url>
+		<loc>https://floberry36.github.io/zoonigma-demo/en/</loc>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://floberry36.github.io/zoonigma-demo/fr/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://floberry36.github.io/zoonigma-demo/en/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://floberry36.github.io/zoonigma-demo/"/>
+	</url>
+	<url>
+		<loc>https://floberry36.github.io/zoonigma-demo/fr/credits/</loc>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://floberry36.github.io/zoonigma-demo/fr/credits/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://floberry36.github.io/zoonigma-demo/en/credits/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://floberry36.github.io/zoonigma-demo/fr/credits/"/>
+	</url>
+	<url>
+		<loc>https://floberry36.github.io/zoonigma-demo/en/credits/</loc>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://floberry36.github.io/zoonigma-demo/fr/credits/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://floberry36.github.io/zoonigma-demo/en/credits/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://floberry36.github.io/zoonigma-demo/fr/credits/"/>
+	</url>
+</urlset>

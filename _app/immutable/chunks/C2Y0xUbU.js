@@ -1,0 +1,1 @@
+import{n as e}from"./Dveo3-FM.js";import"./ffWop0W6.js";var t=e=>e.endsWith(`/`)?e:`${e}/`,n=n=>t(e(`/[lang=lang]`,{lang:n})),r=n=>t(e(`/[lang=lang]/play`,{lang:n})),i=n=>t(e(`/[lang=lang]/credits`,{lang:n}));export{t as i,n,r,i as t};
