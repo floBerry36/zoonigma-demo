@@ -1,0 +1,1 @@
+import{t as e}from"./B7Wn-87w.js";import"./CAQVRXXM.js";import{t}from"./DecFVGFN.js";var n=((e={},n={})=>(n.locale??t())===`en`?`Home`:`Accueil`),r=()=>e.map(e=>({lang:e}));export{n,r as t};

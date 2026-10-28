@@ -1,0 +1,1 @@
+var e={"logo.svg":{width:786,height:208.08},"logo-sombre.svg":{width:786,height:208.08},"icone.svg":{width:68.596,height:44.294},"icone-sombre.svg":{width:68.596,height:44.294}};export{e as t};
