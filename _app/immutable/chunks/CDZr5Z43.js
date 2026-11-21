@@ -1,0 +1,1 @@
+import{o as e}from"./CxwYp1wY.js";var t=((t={},n={})=>(n.locale??e())===`en`?`(new tab)`:`(nouvel onglet)`),n={cc0:{label:`CC0`,url:`https://creativecommons.org/publicdomain/zero/1.0/`},"cc-by":{label:`CC BY`,url:`https://creativecommons.org/licenses/by/4.0/`}};function r(e){return/^cc by 4\.0$/i.test(e.trim())?n[`cc-by`].url:null}export{r as n,t as r,n as t};

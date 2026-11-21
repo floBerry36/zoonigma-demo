@@ -1,0 +1,1 @@
+import{t as e}from"./BJSyczas.js";import"./CmVJo2wH.js";var t=()=>e.map(e=>({lang:e}));export{t};

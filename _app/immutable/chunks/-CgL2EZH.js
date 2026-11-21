@@ -1,0 +1,1 @@
+import{o as e}from"./CxwYp1wY.js";var t=((t={},n={})=>(n.locale??e())===`en`?`Animals of the Globe`:`Animaux du globe`);export{t};

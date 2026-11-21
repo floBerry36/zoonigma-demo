@@ -1,0 +1,1 @@
+var e=[`fr`,`en`],t=[`country`,`region`,`detailed`];export{t as n,e as t};
