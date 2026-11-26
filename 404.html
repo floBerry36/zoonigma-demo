@@ -7,27 +7,97 @@
 <title>Page introuvable — Zoonigma</title>
 <link rel="icon" href="https://floberry36.github.io/zoonigma-demo/favicon.svg" type="image/svg+xml">
 <style>
-	:root { color-scheme: light dark; --paper: #fbf5e9; --ink: #1d2a24; --brand: #1e5a44; --on-brand: #ffffff; }
-	@media (prefers-color-scheme: dark) { :root { --paper: #121d18; --ink: #f1ebdd; --brand: #5fb38a; --on-brand: #121d18; } }
-	body { margin: 0; background: var(--paper); color: var(--ink); font-family: system-ui, sans-serif; }
-	main { max-width: 30rem; margin: 12vh auto 0; padding: 0 1rem; text-align: center; }
-	img { width: 250px; max-width: 100%; height: auto; }
-	h1 { font-size: 1.5rem; margin: 1.5rem 0 0.25rem; }
-	p { margin: 0 0 1.5rem; }
-	a { display: inline-block; min-height: 44px; line-height: 44px; padding: 0 1.25rem; border-radius: 12px;
+	:root { color-scheme: light dark; --paper: #fbf5e9; --card: #ffffff; --ink: #1d2a24; --muted: #5a665f; --brand: #1e5a44; --on-brand: #ffffff; }
+	@media (prefers-color-scheme: dark) { :root { --paper: #121d18; --card: #1b2a23; --ink: #f1ebdd; --muted: #a7b3ab; --brand: #5fb38a; --on-brand: #121d18; } }
+	body { margin: 0; background: var(--paper); color: var(--ink); font-family: system-ui, sans-serif; line-height: 1.5; }
+	/* Exactement la hauteur de l'écran : pas de barre de défilement. */
+	.page { position: relative; display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; }
+	/* Décor : la photo très floutée sur toute la page. */
+	.backdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(24px); transform: scale(1.1); }
+	header, .body { position: relative; }
+	header { flex-shrink: 0; padding: 0.75rem 1rem 0; text-align: center; }
+	header img { width: 220px; max-width: 60vw; height: auto; }
+	/* Téléphone : photo en haut, texte dessous. */
+	.body { flex: 1; min-height: 0; display: flex; flex-direction: column-reverse; gap: 1rem; padding: 1rem; }
+	.stage { position: relative; flex: 1; min-height: 0; min-width: 0; }
+	/* La photo entière, jamais agrandie au-delà de sa taille réelle ni coupée. */
+	.photo { position: absolute; inset: 0; margin: auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 12px; }
+	.card { box-sizing: border-box; flex-shrink: 0; padding: 1rem 1.25rem 0.5rem; text-align: center; border-radius: 12px;
+		background: color-mix(in srgb, var(--card) 70%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15); }
+	/* Grand écran : colonne de texte à gauche, photo à droite. */
+	@media (min-width: 900px) {
+		.body { flex-direction: row; gap: 2rem; padding: 1.5rem 2rem 2rem; }
+		.card { width: 24rem; display: flex; flex-direction: column; justify-content: center; overflow-y: auto; }
+	}
+	.code { margin: 0 0 0.25rem; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+	h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 0.5rem; }
+	.text { color: var(--muted); margin: 0 0 1rem; }
+	.btn { display: inline-block; min-height: 44px; line-height: 44px; padding: 0 1.25rem; border-radius: 999px;
 		background: var(--brand); color: var(--on-brand); font-weight: 700; text-decoration: none; }
+	.credit { display: flex; flex-direction: column; margin: 0.75rem 0 0; font-size: 0.875rem; color: var(--muted); }
+	.credit[hidden] { display: none; }
+	.name { font-weight: 700; color: var(--ink); }
+	.credit a { display: inline-flex; align-items: center; min-height: 44px; color: inherit; }
+	.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 </style>
 </head>
 <body>
-<main>
-	<picture>
-		<source srcset="https://floberry36.github.io/zoonigma-demo/logos/logo-sombre.svg" media="(prefers-color-scheme: dark)">
-		<img src="https://floberry36.github.io/zoonigma-demo/logos/logo.svg" alt="Zoonigma" width="250" height="64">
-	</picture>
-	<h1>Cette page n'existe pas</h1>
-	<p><a href="https://floberry36.github.io/zoonigma-demo/fr/">Retour à l'accueil</a></p>
-	<h1 lang="en">This page does not exist</h1>
-	<p lang="en"><a href="https://floberry36.github.io/zoonigma-demo/en/">Back to home</a></p>
-</main>
+<div class="page">
+	<header>
+		<picture>
+			<source srcset="https://floberry36.github.io/zoonigma-demo/logos/logo-sombre.svg" media="(prefers-color-scheme: dark)">
+			<img src="https://floberry36.github.io/zoonigma-demo/logos/logo.svg" alt="Zoonigma" width="220" height="56">
+		</picture>
+	</header>
+	<div class="body">
+		<main class="card">
+			<p class="code" data-t="code">Erreur 404</p>
+			<h1 data-t="heading">Cette page s'est camouflée</h1>
+			<p class="text" data-t="text">Elle se cache aussi bien que cet animal : elle n'existe pas, ou plus.</p>
+			<p><a class="btn" id="back" href="https://floberry36.github.io/zoonigma-demo/fr/" data-t="back">Retour à l'accueil</a></p>
+			<p class="credit" id="credit" hidden>
+				<span class="name" id="name"></span>
+				<span><span id="lead"></span> <span aria-hidden="true">·</span>
+					<a id="license" target="_blank" rel="noopener noreferrer license"></a>
+					<span aria-hidden="true">·</span>
+					<a id="source" target="_blank" rel="noopener noreferrer"></a></span>
+			</p>
+		</main>
+		<div class="stage" id="stage"></div>
+	</div>
+</div>
+<script type="application/json" id="data">{"base":"https://floberry36.github.io/zoonigma-demo","texts":{"fr":{"title":"Page introuvable — Zoonigma","code":"Erreur 404","heading":"Cette page s'est camouflée","text":"Elle se cache aussi bien que cet animal : elle n'existe pas, ou plus.","back":"Retour à l'accueil","newTab":"(nouvel onglet)","source":"Voir la photo d'origine"},"en":{"title":"Page not found — Zoonigma","code":"Error 404","heading":"This page has gone into hiding","text":"It hides as well as this animal: it doesn't exist, or no longer does.","back":"Back to home","newTab":"(new tab)","source":"See the original photo"}},"photos":[{"src":"https://floberry36.github.io/zoonigma-demo/images/photos/152d6deeeb006be8.webp","width":1024,"height":683,"name":{"fr":"Sur la photo : Panda géant","en":"In the photo: Giant panda"},"credit":{"fr":"Photo : domaine public","en":"Photo: public domain"},"license":{"label":"CC0","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"sourceUrl":"https://www.inaturalist.org/photos/351209004"},{"src":"https://floberry36.github.io/zoonigma-demo/images/photos/9a9107c0ba42aea0.webp","width":1024,"height":683,"name":{"fr":"Sur la photo : Panda géant","en":"In the photo: Giant panda"},"credit":{"fr":"Photo : domaine public","en":"Photo: public domain"},"license":{"label":"CC0","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"sourceUrl":"https://www.inaturalist.org/photos/351209026"},{"src":"https://floberry36.github.io/zoonigma-demo/images/photos/23de9e797dc3a07f.webp","width":768,"height":1024,"name":{"fr":"Sur la photo : Koala","en":"In the photo: Koala"},"credit":{"fr":"Photo : whitean","en":"Photo: whitean"},"license":{"label":"CC BY","url":"https://creativecommons.org/licenses/by/4.0/"},"sourceUrl":"https://www.inaturalist.org/photos/690011364"},{"src":"https://floberry36.github.io/zoonigma-demo/images/photos/0e69b321fc99ffbd.webp","width":1024,"height":629,"name":{"fr":"Sur la photo : Flamant rose","en":"In the photo: Greater flamingo"},"credit":{"fr":"Photo : SteveM4560","en":"Photo: SteveM4560"},"license":{"label":"CC BY","url":"https://creativecommons.org/licenses/by/4.0/"},"sourceUrl":"https://www.inaturalist.org/photos/565766833"},{"src":"https://floberry36.github.io/zoonigma-demo/images/photos/dd5d9cfe0203967a.webp","width":1024,"height":683,"name":{"fr":"Sur la photo : Loup gris","en":"In the photo: Grey wolf"},"credit":{"fr":"Photo : Isaac Krone","en":"Photo: Isaac Krone"},"license":{"label":"CC BY","url":"https://creativecommons.org/licenses/by/4.0/"},"sourceUrl":"https://www.inaturalist.org/photos/147620889"}]}</script>
+<script>
+	// Langue d'après l'adresse demandée (/zoonigma-demo/en/… : anglais), puis photo tirée au hasard.
+	// Tout passe par textContent et des attributs : aucun texte n'est lu comme du HTML.
+	(function () {
+		var data = JSON.parse(document.getElementById('data').textContent);
+		var rest = location.pathname.slice(new URL(data.base + '/').pathname.length);
+		var lang = /^en(\/|$)/.test(rest) ? 'en' : 'fr';
+		var t = data.texts[lang];
+		document.documentElement.lang = lang;
+		document.title = t.title;
+		document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.getAttribute('data-t')]; });
+		document.getElementById('back').href = data.base + '/' + lang + '/';
+		if (!data.photos.length) return;
+		var p = data.photos[Math.floor(Math.random() * data.photos.length)];
+		var page = document.querySelector('.page');
+		var backdrop = document.createElement('img');
+		backdrop.className = 'backdrop'; backdrop.src = p.src; backdrop.alt = ''; backdrop.setAttribute('aria-hidden', 'true');
+		page.insertBefore(backdrop, page.firstChild);
+		var photo = document.createElement('img');
+		photo.className = 'photo'; photo.src = p.src; photo.alt = ''; photo.width = p.width; photo.height = p.height;
+		document.getElementById('stage').appendChild(photo);
+		document.getElementById('name').textContent = p.name[lang];
+		document.getElementById('lead').textContent = p.credit[lang];
+		var license = document.getElementById('license');
+		license.href = p.license.url; license.textContent = p.license.label + ' ';
+		var source = document.getElementById('source');
+		source.href = p.sourceUrl; source.textContent = t.source + ' ';
+		[license, source].forEach(function (a) { var s = document.createElement('span'); s.className = 'sr-only'; s.textContent = t.newTab; a.appendChild(s); });
+		document.getElementById('credit').hidden = false;
+	})();
+</script>
 </body>
 </html>
